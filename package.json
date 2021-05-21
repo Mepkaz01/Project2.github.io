@@ -1,0 +1,23 @@
+{
+  "name": "project2.github.io",
+  "version": "1.0.0",
+  "description": "Everyone has a basic need for keeping track of events and planning out their daily activities. Sometimes those daily activities need to be shared with others. The goal\r of the project is to have a digital day planner that's shared by anyone and everyone you want, that's if I reach my goal level.",
+  "main": "sever.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mepkaz01/Project2.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mepkaz01/Project2.github.io/issues"
+  },
+  "homepage": "https://github.com/Mepkaz01/Project2.github.io#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}

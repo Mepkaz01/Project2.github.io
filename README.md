@@ -2,13 +2,10 @@
 
 # App Name: My Calendar Idea
 
-*Short explanation of the project (1-2 sentences) - what is the goal of the project and/or main functionality?*
 Everyone has a basic need for keeping track of events and planning out their daily activities. Sometimes those daily activities need to be shared with others. The goal
 of the project is to have a digital day planner that's shared by anyone and everyone you want, that's if I reach my goal level. 
 
 [Link to project hosted on Heroku]()
-
-## Wireframes
 
 ## User Stories
 
@@ -22,7 +19,6 @@ of the project is to have a digital day planner that's shared by anyone and ever
 ## ERD
 
 ![image](https://user-images.githubusercontent.com/82845234/119193755-1b1d7f00-ba50-11eb-93f9-b83853fa6795.png)
-
 
 ## Bronze Level
 

@@ -11,11 +11,8 @@ const renderSignup = (req, res) => {
 }
 
 const signup = (req, res) => {
-    const uuid = new Date().valueOf();
-    req.body.uuid = uuid;
-    users.push(req.body);
-    res.redirect('/profile/:id')
-    
+        users.push(req.body);
+        res.redirect(`/users/profile/${users.length-1}`);  
 }
 
 //login
@@ -32,6 +29,14 @@ const login = (req, res) => {
     res.redirect(`/users/profile/${index}`);
 }
 
+//profile
+const renderProfile = (req, res) => {
+    res.render('users/profile.ejs', {
+        user: users[req.params.index],
+        index: req.params.index
+    })
+}
+
 
 
 module.exports = {
@@ -39,6 +44,7 @@ module.exports = {
     renderSignup,
     signup,
     renderLogin,
-    login
+    login,
+    renderProfile
     
 }

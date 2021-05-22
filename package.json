@@ -2,7 +2,7 @@
   "name": "project2.github.io",
   "version": "1.0.0",
   "description": "Everyone has a basic need for keeping track of events and planning out their daily activities. Sometimes those daily activities need to be shared with others. The goal\r of the project is to have a digital day planner that's shared by anyone and everyone you want, that's if I reach my goal level.",
-  "main": "sever.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

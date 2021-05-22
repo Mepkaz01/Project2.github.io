@@ -6,11 +6,11 @@ const index = (req, res) => {
 }
 
 //signup
-const signup = (req, res) => {
+const renderSignup = (req, res) => {
     res.render('users/signup.ejs');
 }
 
-const createUser = (req, res) => {
+const signup = (req, res) => {
     const uuid = new Date().valueOf();
     req.body.uuid = uuid;
     users.push(req.body);
@@ -18,9 +18,27 @@ const createUser = (req, res) => {
     
 }
 
+//login
+const renderLogin = (req, res) => {
+    res.render('users/login.ejs')
+}
+
+const login = (req, res) => {
+    let index = users.findIndex(
+        user => (user.email === req.body.email && 
+                    user.password === req.body.password)
+    )
+
+    res.redirect(`/users/profile/${index}`);
+}
+
+
+
 module.exports = {
     index,
+    renderSignup,
     signup,
-    createUser
+    renderLogin,
+    login
     
 }

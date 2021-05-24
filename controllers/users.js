@@ -47,7 +47,7 @@ const editProfile = (req, res) => {
 //delete
 const deleteUser = (req, res) => {
     users.splice(req.params.index, 1);
-    res.redirect('../index.ejs'); //This one has to be fixed
+    res.redirect('/')
 }
 
 

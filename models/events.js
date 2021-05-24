@@ -1,14 +1,14 @@
 const events = [
     {
-        eventId: "1",
-        uuid: "001",
-        title: "C4G Class",
-        Location: "Zoom Meeting",        
-        startDate: "2021-05-24",
-        startTime: "10:00 AM",
-        endDate: "2021-05-24",
-        endTime: "6:00 PM",
-        timeZone: "EST",
+        eventId: "1", 
+        uuid: "001", //uuid
+        title: "C4G Class", //varchar(100)
+        Location: "Zoom Meeting", //varchar (100)       
+        startDate: "2021-05-24", //date
+        startTime: "10:00 AM", //time
+        endDate: "2021-05-24", //date
+        endTime: "6:00 PM", //time
+        timeZone: "EST", //varchar(10)
         calendarId: "01"
     },
 

@@ -8,6 +8,7 @@ app.use(methodOverride('_method'));
 
 const routes = require('./routes');
 app.use('/users', routes.users);
+app.use('/events', routes.events);
 
 app.get('/', (req, res) => {
     res.render('index.ejs');

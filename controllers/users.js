@@ -38,6 +38,18 @@ const renderProfile = (req, res) => {
     })
 }
 
+//edit
+const editProfile = (req, res) => {
+    users[req.params.index] = req.body;
+    res.redirect(`/users/profile/${req.params.index}`);
+}
+
+//delete
+const deleteUser = (req, res) => {
+    users.splice(req.params.index, 1);
+    res.redirect('../index.ejs'); //This one has to be fixed
+}
+
 
 
 module.exports = {
@@ -46,6 +58,8 @@ module.exports = {
     signup,
     renderLogin,
     login,
-    renderProfile
-    
+    renderProfile,
+    editProfile,
+    deleteUser
+
 }

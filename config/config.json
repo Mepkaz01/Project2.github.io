@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "Legacy@01",
+    "database": "calendar_dev",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

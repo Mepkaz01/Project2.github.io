@@ -1,4 +1,4 @@
-const events = require('../models/events');
+const events = require('../events.js');
 
 //show (needs to show events by uuid)
 const show = (req, res) => {

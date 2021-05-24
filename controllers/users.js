@@ -1,4 +1,4 @@
-const users = require('../models/users');
+const users = require('../users.js');
 
 //index
 const index = (req, res) => {

@@ -2,7 +2,7 @@ const users = require('../models/users');
 
 //index
 const index = (req, res) => {
-    res.render('users/index.ejs', { users: users }); 
+    res.render('users/index.ejs', { users: users });     
 }
 
 //signup
@@ -21,6 +21,7 @@ const renderLogin = (req, res) => {
 }
 
 const login = (req, res) => {
+    console.log(req.body);
     let index = users.findIndex(
         user => (user.email === req.body.email && 
                     user.password === req.body.password)

@@ -21,10 +21,12 @@ const renderSignup = (req, res) => {
 }
 
 const signup = (req, res) => {
-        Users.create(req.body)
-        .then(newUser)
-        res.redirect(`/users/profile/${newUser.id}`);  
+    Users.create(req.body)
+    .then(newUser => {
+        res.redirect(`/users/profile/${newUser.id}`);
+    }).catch(err => console.error(err))
 }
+
 
 //login
 const renderLogin = (req, res) => {
@@ -73,13 +75,17 @@ const renderProfile = (req, res) => {
 
 //edit
 const editProfile = (req, res) => {
-    Users.findByPk(req.params.index)
-    .then(foundUser => {
-            res.render('users/profile.ejs', {
-                user: foundUser,
-        })
+    Users.update(req.body, {
+        where: {
+            id: req.params.index
+        },
+        returning: true
+    })
+    .then(updatedUser => {
+        res.redirect(`/users/profile/${req.params.index}`);
     })
 }
+
 
 // const editProfile = (req, res) => {
 //     users[req.params.index] = req.body;

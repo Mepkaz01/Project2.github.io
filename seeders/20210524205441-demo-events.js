@@ -10,7 +10,8 @@ module.exports = {
         startTime: "10:00 AM", 
         endDate: "2021-05-24", 
         endTime: "6:00 PM", 
-        timeZone: "EST"
+        timeZone: "EST",
+        userId: 1
       },
       {
         title: "Doctor's Appointment",
@@ -20,6 +21,7 @@ module.exports = {
         endDate: "2021-05-25",
         endTime: "10:00 AM",
         timeZone: "EST",
+        userId: 1
       }
   ], {})    
 },

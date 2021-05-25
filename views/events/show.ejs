@@ -8,25 +8,21 @@
 </head>
 <body>
     <h1>Your Events</h1>    
-    <form action="/events/show/<%=event.id%>?_method=PUT" method="POST">
-        <% for(let i=0; i < events.length; i++){ %>
-
-            Title: <input type="text" name="title" value=<%=event.title%> /><br> <br>
-            Location: <input type="text" name="location" value=<%=event.location%> /><br> <br>
-            Start Date: <input type="text" name="start date" value=<%=event.startDate%> /><br> <br>
-            Start Time: <input type="text" name="start time" value=<%=event.startTime%> /><br> <br>
-            End Date: <input type="text" name="end date" value=<%=event.endDate%> /><br> <br>
-            End Time: <input type="text" name="end time" value=<%=event.endTime%> /><br> <br>
-            Time Zone: <input type="text" name="time zone" value=<%=event.timeZone%> /><br> <br>
-            <input type="submit" value="Edit Event" />
+    <form action="/events/show/<%=user.id%>?_method=PUT" method="POST">
+        <% for (let i = 0; i < user.Events.length; i++) { %>
+            Title: <input type="text" name="title" value=<%= user.Events[i].title %> /><br> <br>
+            Location: <input type="text" name="location" value=<%= user.Events[i].location %> /><br> <br>
+            Start Date: <input type="date" name="start date" value=<%= user.Events[i].startDate %> /><br> <br>
+            Start Time: <input type="time" name="start time" value=<%= user.Events[i].startTime %> /><br> <br>
+            End Date: <input type="date" name="end date" value=<%= user.Events[i].endDate %> /><br> <br>
+            End Time: <input type="time" name="end time" value=<%= user.Events[i].endTime %> /><br> <br>
+            Time Zone: <input type="text" name="time zone" value=<%= user.Events[i].timeZone %> /><br> <br>
+            <input type="submit" value="Edit Event" /><br> <br>
         </form>
-        <br><br>
-        <form action="/events/show/<%=i%>?_method=DELETE" method="POST">
+        <form action="/events/show/<%=user.id%>?_method=DELETE" method="POST">
             <input type="submit" value="Delete" />
-        </form>
-        <br><br>
-        <% } %> 
-        
+        </form><br> <br>
+        <% } %>
         <nav>
             <a href="/events/new">Add a New Event</a>
         </nav>

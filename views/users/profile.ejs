@@ -19,7 +19,10 @@
     <input type="submit" value="Delete User" />
     </form>
     <br><br>
-    <a href="/events/show">View Your Events</a>
+    <% for (let i = 0; i < user.Events.length; i++) { %>
+        <p><%= user.Events[i].title %></p>        
+    <% } %>
+    <a href="/events/show/<%=user.id%>">View Your Events</a>
     <br><br>
     <a href="/events/show">View Calendar</a>
 </body>

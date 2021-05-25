@@ -1,12 +1,17 @@
-const Events = require('../models').Events
+const Events = require('../models').Events;
+const Users = require('../models').Users;
 
-//show (needs to show events by uuid)
+//show (needs to show events by id)
 const show = (req, res) => {
-    Events.findByPk(req.params.id)
-    .then(event => {
-        res.render('events/show.ejs', { event: event })
+    Users.findByPk(req.params.userId, { 
+        include: [Events]
     })
-
+    .then(foundUser => {
+            console.log(foundUser)
+            res.render('events/show.ejs', {
+                user: foundUser,
+        })
+    })
 }
 
 //new

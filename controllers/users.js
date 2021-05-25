@@ -1,4 +1,5 @@
 const Users = require('../models').Users;
+const Events = require('../models').Events;
 
 //index
 const index = (req, res) => {
@@ -57,8 +58,11 @@ const login = (req, res) => {
 
 //profile
 const renderProfile = (req, res) => {
-    Users.findByPk(req.params.index)
+    Users.findByPk(req.params.index, { 
+        include: [Events]
+    })
     .then(foundUser => {
+            console.log(foundUser)
             res.render('users/profile.ejs', {
                 user: foundUser,
         })

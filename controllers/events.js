@@ -16,22 +16,33 @@ const show = (req, res) => {
 
 //new
 const renderNew = (req, res) => {
-    res.render('events/new.ejs')
+    
+    res.render('events/new.ejs', { index: req.params.userId })
 }
 
 const createEvent = (req, res) => {
-    Events.create(req.body)
-    .then(newEvent => {
-        res.redirect('/events/show.ejs')
+    req.body.userId=req.params.userId;
+    Events.create(req.body).then(newEvent => {
+        console.log("eventCreated")
+        res.redirect(`/events/show/${req.body.userId}`);
     })
+    // Users.findByPk(req.body.userId).then(user => {
+    //     Events.create(req.body.id).then(event => {
+    //         user.createEvent(event)
+    //         res.redirect(`/events/show/${req.body.userId}`);
+    // })
+    
 }
 
 //edit
 const renderEdit = (req, res) => {
-    Events.findByPk(req.params.index)
-    .then(foundEvent => {
-        res.render('/events/show.ejs', {
-            event: foundEvent
+    Users.findByPk(req.params.userId, { 
+        include: [Events]
+    })
+    .then(foundUser => {
+            console.log(foundUser)
+            res.render('events/show.ejs', {
+                user: foundUser,
         })
     })
 }
@@ -42,7 +53,7 @@ const editEvent = (req, res) => {
         returning: true
     })
     .then(editEvent => {
-        res.redirect('/events/show.ejs');
+        res.redirect(`/events/show/${editEvent.userId}`);
     })    
 }
 

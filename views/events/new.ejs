@@ -8,14 +8,14 @@
 </head>
 <body>
     <h1>New Event</h1>
-        <form action="/new.ejs" method="POST">
+        <form action="/events/new/<%=index%>" method="POST">
             Title: <input type="text" name="title" /><br> <br>
             Location: <input type="text" name="location" /><br> <br>
-            Start Date: <input type="date" name="start date" /><br> <br>
-            Start Time: <input type="time" name="start time" /><br> <br>
-            End Date: <input type="date" name="end date" /><br> <br>
-            End Time: <input type="time" name="end time" /><br> <br>
-            Time Zone: <input type="text" name="time zone" /><br> <br>
+            Start Date: <input type="date" name="startDate" /><br> <br>
+            Start Time: <input type="time" name="startTime" /><br> <br>
+            End Date: <input type="date" name="endDate" /><br> <br>
+            End Time: <input type="time" name="endTime" /><br> <br>
+            Time Zone: <input type="text" name="timeZone" /><br> <br>
         <input type="submit" value="Add New Event" />
         </form>
 </body>

@@ -8,8 +8,8 @@
 </head>
 <body>
     <h1>Your Events</h1>    
-    <form action="/events/show/<%=i%>?_method=PUT" method="POST">
-        <% for(let i=0; i<events.length; i++){ %>
+    <form action="/events/show/<%=event.id%>?_method=PUT" method="POST">
+        <% for(let i=0; i < events.length; i++){ %>
 
             Title: <input type="text" name="title" value=<%=event.title%> /><br> <br>
             Location: <input type="text" name="location" value=<%=event.location%> /><br> <br>

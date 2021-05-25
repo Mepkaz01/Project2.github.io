@@ -1,9 +1,19 @@
-const users = require('../users.js');
+const Users = require('../models').Users;
 
 //index
 const index = (req, res) => {
-    res.render('users/index.ejs', { users: users });     
+    Users.findAll()
+    .then(allUsers => {
+        res.render('users/index.ejs', {
+            users: allUsers
+        });
+    });
 }
+
+
+// const index = (req, res) => {
+//     res.render('users/index.ejs', { users: users });     
+// }
 
 //signup
 const renderSignup = (req, res) => {
@@ -11,8 +21,9 @@ const renderSignup = (req, res) => {
 }
 
 const signup = (req, res) => {
-        users.push(req.body);
-        res.redirect(`/users/profile/${users.length-1}`);  
+        Users.create(req.body)
+        .then(newUser)
+        res.redirect(`/users/profile/${newUser.id}`);  
 }
 
 //login
@@ -21,34 +32,76 @@ const renderLogin = (req, res) => {
 }
 
 const login = (req, res) => {
-    console.log(req.body);
-    let index = users.findIndex(
-        user => (user.email === req.body.email && 
-                    user.password === req.body.password)
-    )
-
-    res.redirect(`/users/profile/${index}`);
-}
-
-//profile
-const renderProfile = (req, res) => {
-    res.render('users/profile.ejs', {
-        user: users[req.params.index],
-        index: req.params.index
+    Users.findOne({
+        where: {
+            email: req.body.email,
+            password: req.body.password
+        }
+    })
+    .then(foundUser => {
+        res.redirect(`/users/profile/${foundUser.id}`);
     })
 }
 
+// const login = (req, res) => {
+//     console.log(req.body);
+//     let index = users.findIndex(
+//         user => (user.email === req.body.email && 
+//                     user.password === req.body.password)
+//     )
+
+//     res.redirect(`/users/profile/${index}`);
+// }
+
+//profile
+const renderProfile = (req, res) => {
+    Users.findByPk(req.params.index)
+    .then(foundUser => {
+            res.render('users/profile.ejs', {
+                user: foundUser,
+        })
+    })
+}
+
+
+// const renderProfile = (req, res) => {
+//     res.render('users/profile.ejs', {
+//         user: users[req.params.index],
+//         index: req.params.index
+//     })
+// }
+
 //edit
 const editProfile = (req, res) => {
-    users[req.params.index] = req.body;
-    res.redirect(`/users/profile/${req.params.index}`);
+    Users.findByPk(req.params.index)
+    .then(foundUser => {
+            res.render('users/profile.ejs', {
+                user: foundUser,
+        })
+    })
 }
+
+// const editProfile = (req, res) => {
+//     users[req.params.index] = req.body;
+//     res.redirect(`/users/profile/${req.params.index}`);
+// }
 
 //delete
 const deleteUser = (req, res) => {
-    users.splice(req.params.index, 1);
-    res.redirect('/')
+    Users.destroy({
+        where: {
+            id: req.params.index
+        }
+    })
+    .then(() => {
+        res.redirect('/');
+    })
 }
+
+// const deleteUser = (req, res) => {
+//     users.splice(req.params.index, 1);
+//     res.redirect('/')
+// }
 
 
 

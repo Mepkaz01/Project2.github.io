@@ -1,12 +1,14 @@
 const express = require('express');
-const app = express();
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
+
+const app = express();
+const routes = require('./routes');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 
-const routes = require('./routes');
+
 app.use('/users', routes.users);
 app.use('/events', routes.events);
 

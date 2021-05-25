@@ -6,8 +6,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
-        defaultValue: Sequelize.UUIDV4
+        type: Sequelize.INTEGER
       },
       name: {
         type: Sequelize.STRING
@@ -21,12 +20,13 @@ module.exports = {
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: new Date(),
+        defaultValue: new Date()
+
       },
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-        defaultValue: new Date(),
+        defaultValue: new Date()
       }
     });
   },

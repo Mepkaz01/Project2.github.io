@@ -5,9 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/events.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 </head>
 <body>
     <h1>Your Events</h1>
+    <hr>
+    <nav>
+        <a href="/events/new/<%=user.id%>">Add a New Event</a>
+    </nav>
+    <hr>
     <% for (let i = 0; i < user.Events.length; i++) { %>
             <form action="/events/show/<%= user.Events[i].id %>?_method=PUT" method="POST">    
         
@@ -20,14 +27,11 @@
             Time Zone: <input type="text" name="timeZone" value=<%= user.Events[i].timeZone %> /><br> <br>
             User Id: <input type="text" name="userId" value=<%=user.Events[i].userId %> /><br> <br>
         
-            <input type="submit" value="Edit Event" /><br> <br>
+            <button type="submit">Edit Event</button><br> <br>
         </form>
         <form action="/events/show/<%= user.Events[i].id %>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete Event" />
+            <button type="submit">Delete Event</button>
         </form><br> <br>
         <% } %>
-        <nav>
-            <a href="/events/new/<%=user.id%>">Add a New Event</a>
-        </nav>
 </body>
 </html>

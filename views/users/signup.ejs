@@ -5,14 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/form.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 </head>
 <body>
-    <h1>User Sign Up</h1>
     <form action="/users/signup" method="POST">
-        <input type="text" name="name" placeholder="Name" /><br><br>
-        <input type="email" name="email" placeholder="Email" /><br><br>
-        <input type="password" name="password" placeholder="Password" /><br><br>
-        <input type="submit" value="Create User" />
+        <div class="container"></div>
+            <h1>User Sign Up</h1>
+            <hr>
+            <label for="text"><b>Name</b></label>
+            <input type="text" name="name" placeholder="Name" /><br><br>
+            <label for="email"><b>Email</b></label>
+            <input type="email" name="email" placeholder="Email" /><br><br>
+            <label for="password"><b>Password</b></label>
+            <input type="password" name="password" placeholder="Password" /><br><br>
+        </div>         
+        <div class="clearfix">
+            <button type="submit">Sign Up</button>
+        </div>        
     </form>
 </body>
 </html>

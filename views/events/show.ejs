@@ -10,8 +10,8 @@
     <h1>Your Events</h1>
     <form action="/events/show/<%=user.id%>?_method=PUT" method="POST"></form>    
         <% for (let i = 0; i < user.Events.length; i++) { %>
-            Title: <input type="text" name="title" value=<%= user.Events[i].title %> /><br> <br>
-            Location: <input type="text" name="location" value=<%= user.Events[i].location %> /><br> <br>
+            Title: <input type="text" name="title" value= "<%= user.Events[i].title %>" /><br> <br>
+            Location: <input type="text" name="location" value= "<%= user.Events[i].location %>" /><br> <br>
             Start Date: <input type="date" name="startDate" value=<%= user.Events[i].startDate %> /><br> <br>
             Start Time: <input type="time" name="startTime" value=<%= user.Events[i].startTime %> /><br> <br>
             End Date: <input type="date" name="endDate" value=<%= user.Events[i].endDate %> /><br> <br>

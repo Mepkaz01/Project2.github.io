@@ -36,6 +36,7 @@ const createEvent = (req, res) => {
 
 //edit
 const renderEdit = (req, res) => {
+    console.log(req.params.userId)
     Users.findByPk(req.params.userId, { 
         include: [Events]
     })
@@ -48,13 +49,16 @@ const renderEdit = (req, res) => {
 }
 
 const editEvent = (req, res) => {
+    console.log(req.body)
     Events.update(req.body, {
         where: {id:req.params.index},
-        returning: true
+        returning: true,
+        plain: true
     })
     .then(editEvent => {
-        res.redirect(`/events/show/${editEvent.userId}`);
-    })    
+        console.log(editEvent)
+        res.redirect(`/events/show/${req.body.userId}`);
+    }).catch(err => console.log(err))    
 }
 
 //delete

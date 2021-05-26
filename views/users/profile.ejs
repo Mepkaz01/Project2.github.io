@@ -5,25 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/css/profile.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 </head>
 <body>
-    <h1>Welcome, <%=user.name%>!</h1>
+    <h1 class="header">Welcome, <%=user.name%>!</h1>
     <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
         Name: <input type="text" name="name" value= "<%=user.name%>" /><br> <br>
         Email: <input type="email" name="email" value= <%=user.email%> /> <br> <br>
         Password: <input type="password" name="password" value= <%=user.password%> /><br> <br>
-        <input type="submit" value="Edit Profile" />
+        <button type="submit">Edit Profile</button>
     </form>
-    <br><br>
     <form action="/users/<%=user.id%>?_method=DELETE" method="POST">
-    <input type="submit" value="Delete User" />
+    <button type="submit">Delete User</button>
     </form>
-    <br><br>
-    <% for (let i = 0; i < user.Events.length; i++) { %>
-        <p><%= user.Events[i].title %></p>        
-    <% } %>
+    <br></br>
     <a href="/events/show/<%=user.id%>">View Your Events</a>
-    <br><br>
-    <a href="/events/show">View Calendar</a>
 </body>
 </html>

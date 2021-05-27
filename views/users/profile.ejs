@@ -10,6 +10,8 @@
 </head>
 <body>
     <h1>Welcome, <%=user.name%>!</h1>
+    <a href="/events/index/<%=user.id%>">View Your Events</a>
+    <br></br>
     <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
         Name: <input type="text" name="name" value= "<%=user.name%>" /><br> <br>
         Email: <input type="email" name="email" value= <%=user.email%> /> <br> <br>
@@ -20,6 +22,6 @@
     <button type="submit">Delete User</button>
     </form>
     <br></br>
-    <a href="/events/index/<%=user.id%>">View Your Events</a>
+    <a href="/" >Log Out</a>
 </body>
 </html>

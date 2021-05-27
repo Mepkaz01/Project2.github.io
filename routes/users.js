@@ -12,5 +12,4 @@ router.put('/profile/:index', ctrl.users.editProfile);
 router.delete('/:index', ctrl.users.deleteUser);
 
 
-
 module.exports = router;

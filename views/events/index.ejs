@@ -15,9 +15,9 @@
         <a href="/events/new/<%=user.id%>">Add a New Event</a>
     </nav>
     <hr>
+    <div class="container">
     <% for (let i = 0; i < user.Events.length; i++) { %>
-            <form action="/events/index/<%= user.Events[i].id %>?_method=PUT" method="POST">    
-        
+        <form action="/events/index/<%= user.Events[i].id %>?_method=PUT" method="POST">    
             Title: <input type="text" name="title" value= "<%= user.Events[i].title %>" /><br> <br>
             Location: <input type="text" name="location" value= "<%= user.Events[i].location %>" /><br> <br>
             Start Date: <input type="date" onfocus="(this.type='date')" name="startDate" value= "<%= user.Events[i].startDate %>" /><br> <br>
@@ -26,13 +26,19 @@
             End Time: <input type="time" name="endTime" value=<%= user.Events[i].endTime %> /><br> <br>
             Time Zone: <input type="text" name="timeZone" value=<%= user.Events[i].timeZone %> /><br> <br>
             User Id: <input type="text" name="userId" value=<%=user.Events[i].userId %> /><br> <br>
-        
-            <button type="submit">Edit Event</button><br> <br>
-        </form>
+            <button type="submit">Edit Event</button>
+        </form>    
         <form action="/events/index/<%= user.id %>/<%= user.Events[i].id %>?_method=DELETE" method="POST">
             <button type="submit">Delete Event</button>
-        </form><br><br>
-        <% } %>        
-        <a href="/" >Log Out</a>
+        </form>
+        <br></br>
+    <% } %>
+    
+    </div>
+    <div class="logout"> 
+        <hr>       
+        <a href="/">Log Out</a>
+        <hr>
+    </div>
 </body>
 </html>

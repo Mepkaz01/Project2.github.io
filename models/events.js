@@ -18,9 +18,9 @@ module.exports = (sequelize, DataTypes) => {
     uuid: DataTypes.UUID,
     title: DataTypes.STRING,
     location: DataTypes.STRING,
-    startDate: DataTypes.DATE,
+    startDate: DataTypes.STRING,
     startTime: DataTypes.TIME,
-    endDate: DataTypes.DATE,
+    endDate: DataTypes.STRING,
     endTime: DataTypes.TIME,
     timeZone: DataTypes.STRING,
     userId: DataTypes.INTEGER

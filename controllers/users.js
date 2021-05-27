@@ -11,11 +11,6 @@ const index = (req, res) => {
     });
 }
 
-
-// const index = (req, res) => {
-//     res.render('users/index.ejs', { users: users });     
-// }
-
 //signup
 const renderSignup = (req, res) => {
     res.render('users/signup.ejs');
@@ -25,9 +20,8 @@ const signup = (req, res) => {
     Users.create(req.body)
     .then(newUser => {
         res.redirect(`/users/profile/${newUser.id}`);
-    }).catch(err => console.error(err))
+    })
 }
-
 
 //login
 const renderLogin = (req, res) => {
@@ -46,36 +40,17 @@ const login = (req, res) => {
     })
 }
 
-// const login = (req, res) => {
-//     console.log(req.body);
-//     let index = users.findIndex(
-//         user => (user.email === req.body.email && 
-//                     user.password === req.body.password)
-//     )
-
-//     res.redirect(`/users/profile/${index}`);
-// }
-
 //profile
 const renderProfile = (req, res) => {
     Users.findByPk(req.params.index, { 
         include: [Events]
     })
     .then(foundUser => {
-            console.log(foundUser)
             res.render('users/profile.ejs', {
                 user: foundUser,
         })
     })
 }
-
-
-// const renderProfile = (req, res) => {
-//     res.render('users/profile.ejs', {
-//         user: users[req.params.index],
-//         index: req.params.index
-//     })
-// }
 
 //edit
 const editProfile = (req, res) => {
@@ -90,12 +65,6 @@ const editProfile = (req, res) => {
     })
 }
 
-
-// const editProfile = (req, res) => {
-//     users[req.params.index] = req.body;
-//     res.redirect(`/users/profile/${req.params.index}`);
-// }
-
 //delete
 const deleteUser = (req, res) => {
     Users.destroy({
@@ -107,13 +76,6 @@ const deleteUser = (req, res) => {
         res.redirect('/');
     })
 }
-
-// const deleteUser = (req, res) => {
-//     users.splice(req.params.index, 1);
-//     res.redirect('/')
-// }
-
-
 
 module.exports = {
     index,

@@ -3,7 +3,7 @@
 # App Name: My Calendar Idea
 
 Everyone has a basic need for keeping track of events and planning out their daily activities. Sometimes those daily activities need to be shared with others. The goal
-of the project is to have a digital day planner that's shared by anyone and everyone you want, that's if I reach my gold level. 
+of the project is to have a digital personal planner with multiple users with their own log in, profile page and events page by user. 
 
 [Link to project hosted on Heroku]()
 

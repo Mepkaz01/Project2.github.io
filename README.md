@@ -2,12 +2,7 @@
 
 # App Name: My Calendar Idea
 
-Everyone has a basic need for keeping track of events and planning out their daily activities. Sometimes those daily activities need to be shared with others. The goal
-<<<<<<< HEAD
-of the project is to have a digital day planner that's shared by anyone and everyone you want, that's if I reach my gold level. 
-=======
-of the project is to have a digital personal planner with multiple users with their own log in, profile page and events page. Future enhancements will be to add a Calendar table and add the functionality for users to share events by creating groups. 
->>>>>>> 6af18b53c7b48965ca0a24bb18d38fb9871e6000
+Everyone has a basic need for keeping track of events and planning out their daily activities. Sometimes those daily activities need to be shared with others. The goal of the project is to have a digital personal planner with multiple users with their own log in, profile page and events page. Future enhancements will be to add a Calendar table and add the functionality for users to share events by creating groups. 
 
 [My Calendar](https://github.com/Mepkaz01/Project2.github.io.git)
 

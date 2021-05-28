@@ -8,12 +8,17 @@ Everyone has a basic need for keeping track of events and planning out their dai
 
 ## User Stories
 
-1) Users should sign up with unique email 
-2) Email will be used as username
-3) Users should be able to edit and delete their profile
-4) Calendar entries should have description date and time
-5) Users should be able to update and delete calendar entries
-6) Calendar should have user information as well as calendar entry with date and time
+1) Users sign up with name, email and password
+2) Users login with email and password
+3) Email is used as username
+4) Users are able to edit and delete their profile on the same page
+5) Events link is on the user's profile page
+6) Events are linked to user id and view by single user
+7) Event entries have title, location, date, time and timezone
+8) Users are able to create on a separate form
+9) New event is rendered into the user's events page
+10) Users are able to update and delete event on the events page
+11) Events indicate user id so in the future it can be linked to a calendar table
 
 ## ERD
 
@@ -90,6 +95,14 @@ In your terminal (gitbash or command prompt)
   * https://sequelize.org/v3/
   * www.w3schools.com for CSS
   * wwww.geeksforgeeks.org for on focus function in events/index.ejs
+
+## Additional Notes
+
+* A big THANK YOU to Casey for all the help 
+* Thank you to Leo for the tips with the events edit
+* Being able to do multiple functions on the same page was important - WIN
+* Having a field as datatype "Date" was a bit problematic. Changing it to "String" worked and I'm happy with the result - WIN
+* CSS looks good eventhough I had trouble with flexbox for events page - WIN
 
 ##### Screenshot
 ![image](https://user-images.githubusercontent.com/82845234/119907866-40622f80-bf1f-11eb-9526-4ee27453dc87.png)
